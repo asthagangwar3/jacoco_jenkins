@@ -1,1 +1,1 @@
-http://172.27.59.121:8080/buildStatus/icon?job=poc_jacoco
+http://e960bdea066e.ngrok.io/job/poc_jacoco/lastBuild/
