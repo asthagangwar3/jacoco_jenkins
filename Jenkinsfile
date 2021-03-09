@@ -1,12 +1,17 @@
 pipeline {
-     agent { label 'master' }
-
+    agent {
+        label 'master' 
+    }
+  
     stages {
-        stage('Build') {
+        stage('build & SonarQube analysis') {
             steps {
-                echo 'Building..'
+                withSonarQubeEnv(installationName:'Sonar' , credentialsId: 'sonar_secret_new')
+                {
+                 bat 'mvn clean install sonar:sonar'
+                }
             }
-        }
-      
+        } 
+       
     }
 }
