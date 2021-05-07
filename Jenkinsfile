@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label 'demo_training'}
 
     stages {
         stage('Build') {
